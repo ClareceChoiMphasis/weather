@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "weather-city-forecast"
+version = "0.1.0"
+description = "CLI tool for current weather and forecast via OpenWeatherMap"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+weather = "weather.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["weather*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
